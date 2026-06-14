@@ -145,16 +145,15 @@ nav.scrolled{
 }
 .hero-bg-img{
   position:absolute;inset:0;width:100%;height:100%;
-  object-fit:cover;opacity:0;
-  /* Set opacity to 0.38 when you add your image src */
+  object-fit:cover;opacity:0.35;
 }
 .hero-overlay{
   position:absolute;inset:0;
   background:linear-gradient(
     to bottom,
-    rgba(6,6,6,0.25) 0%,
-    rgba(6,6,6,0.5) 35%,
-    rgba(6,6,6,0.82) 75%,
+    rgba(6,6,6,0.55) 0%,
+    rgba(6,6,6,0.65) 35%,
+    rgba(6,6,6,0.88) 75%,
     rgba(6,6,6,1) 100%
   )
 }
@@ -223,11 +222,15 @@ nav.scrolled{
 .hero-scroll{
   position:absolute;bottom:48px;left:50%;transform:translateX(-50%);
   z-index:10;display:flex;flex-direction:column;align-items:center;gap:10px;
-  animation:fadeUp 1.1s .6s both
+  animation:scrollFadeIn 1.1s .6s both
 }
 .hero-scroll-line{
   width:1px;height:52px;background:linear-gradient(to bottom,var(--gold),transparent);
   animation:scrollPulse 2s infinite
+}
+@keyframes scrollFadeIn{
+  from{opacity:0;transform:translateX(-50%) translateY(32px)}
+  to{opacity:1;transform:translateX(-50%) translateY(0)}
 }
 @keyframes scrollPulse{
   0%,100%{opacity:.4;transform:scaleY(1)}
@@ -1117,7 +1120,7 @@ footer{
     <video autoplay muted loop playsinline style="display:none" src="">
       <!-- Add your video src here -->
     </video>
-    <img class="hero-bg-img" src="" alt="">
+    <img class="hero-bg-img" src="images/The_Butterfly_Agency_Hero_Section_Photo.png" alt="">
   </div>
   <div class="hero-overlay"></div>
 
